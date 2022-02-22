@@ -97,16 +97,14 @@ Account와 관련된 유스케이스는 모두 account 패키지 안에 있다.
 
 장점1. 이러한 패키지 구조는 모델-코드 갭(아키텍처-코드 갭)을 효과적으로 다룰 수 있다.
 
-<aside>
-💡 [모델-코드 갭(model-code gap)](https://www.ben-morris.com/most-architecture-diagrams-are-useless/#:~:text=George%20Fairbanks%20identified%20what%20he,always%20be%20mapped%20into%20code.)
-아키텍처 모델에는 항상 코드에 매핑할 수 없는 추상적인 개념, 기술 선택 및 설계 결정이 혼합되어 있다. 최종 결과는 모델이 정한 구성 요소의 배열과 반드시 일치하지 않는 소스 코드가 될 수 있다.
 
-</aside>
+> 💡 [모델-코드 갭(model-code gap)](https://www.ben-morris.com/most-architecture-diagrams-are-useless/#:~:text=George%20Fairbanks%20identified%20what%20he,always%20be%20mapped%20into%20code.)
+> 아키텍처 모델에는 항상 코드에 매핑할 수 없는 추상적인 개념, 기술 선택 및 설계 결정이 혼합되어 있다. 최종 결과는 모델이 정한 구성 요소의 배열과 반드시 일치하지 않는 소스 코드가 될 수 있다.
 
 장점2. 패키지간 접근을 제어할 수 있다.
 
 - package-private인 adapter 클래스
-    - 모든 클래스는 application 패키지 내의 포트 인터페이스를 통해 바깥에 호출되기 때문에 ㅁㅇ멧adapter는 모두 package-private 접근 수준으로 둬도 된다.
+    - 모든 클래스는 application 패키지 내의 포트 인터페이스를 통해 바깥에 호출되기 때문에 adapter는 모두 package-private 접근 수준으로 둬도 된다.
     - 어플리케이션 계층에서 어댑터로 향하는 우발적 의존성은 있을 수 없다.
 - public이어야 하는 application, domain의 일부 클래스
     - application의 port(in, out)
